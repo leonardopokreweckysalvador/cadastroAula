@@ -1,0 +1,8 @@
+.ng-invalid.ng-touched:not(form) {
+    border-bottom: 2px solid red;
+}
+
+input {
+    border-bottom-width: 2px;
+    border-bottom-color: grey;
+}

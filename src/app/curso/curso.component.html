@@ -1,0 +1,58 @@
+<h1>Cadastro de Cursos</h1>
+<form #formularioCurso="ngForm" (ngSubmit)="onSubmit(formularioCurso)" class="form-horizontal">
+
+    <div class="form-group row">
+        <div class="col-sm-12">
+            <label for="nome" class="control-label">Nome do curso:</label>
+            <input type="text" name="nomeCurso" class="form-control" id="nomeCurso" required #nomeCurso="ngModel"
+                [(ngModel)]="curso.nomeCurso">
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-sm-12">
+            <label for="descricao">Descrição:</label>
+            <input type="text" name="descricaoCurso" class="form-control" id="descricaoCurso" required
+                #descricao="ngModel" [(ngModel)]="curso.descricaoCurso">
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-sm-12">
+            <label for="periodo">Período:</label>
+            <input type="text" name="periodoCurso" class="form-control" id="periodoCurso" required
+                #periodoCurso="ngModel" [(ngModel)]="curso.periodoCurso">
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-dark">Cadastrar Curso</button>
+
+</form>
+<a *ngFor="let curso of Curso"
+    routerLink="/cursodeteil/{{curso.id}}">
+
+<div>
+    <h1>{{curso.nome}}</h1>
+</div>
+</a>
+<!--
+<div class="my-md-3">
+    <div class="col-sm-12">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nome:</th>
+                    <th>Descrição:</th>
+                    <th>Período:</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let mostrar of getCursos()">
+                    <td>{{mostrar.nomeCurso}}</td>
+                    <td>{{mostrar.descricaoCurso}}</td>
+                    <td>{{mostrar.periodoCurso}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>-->

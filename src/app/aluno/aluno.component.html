@@ -1,0 +1,51 @@
+<h1>Cadastro de Alunos</h1>
+<form #formularioAluno="ngForm" (ngSubmit)="onSubmit(formularioAluno)" class="form-horizontal">
+
+    <div class="form-group row">
+        <div class="col-sm-12">
+            <label for="nome" class="control-label">Nome:</label>
+            <input type="text" name="nomeAluno" id="nomeAluno" class="form-control" required #nomeAluno="ngModel"
+                [(ngModel)]="aluno.nomeAluno">
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-sm-12">
+            <label for="telefoneAluno" class="control-label">Telefone:</label>
+            <input type="tel" class="form-control" id="telefoneAluno" name="telefoneAluno" required
+                #telefoneAluno="ngModel" [(ngModel)]="aluno.telefoneAluno">
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-sm-12">
+            <label for="emailAluno" class="control-label">E-mail:</label>
+            <input type="email" email class="form-control" id="emailAluno" name="emailAluno" required
+                #emailAluno="ngModel" [(ngModel)]="aluno.emailAluno">
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-dark">Cadastrar Aluno</button>
+
+</form>
+
+<div class="my-md-3">
+    <div class="col-sm-12">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nome:</th>
+                    <th>Telefone:</th>
+                    <th>Email:</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let alunoAtual of getAlunos()">
+                    <td>{{alunoAtual.nomeAluno}}</td>
+                    <td>{{alunoAtual.telefoneAluno}}</td>
+                    <td>{{alunoAtual.emailAluno}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
